@@ -6,11 +6,11 @@ install:
     for lib in *; do
       libName=${lib//.aar/}
       
-      mvn install:install-file \
-        -Dfile=$lib \
-        -DgroupId=com.company.rnsdk \
-        -DartifactId=$libName \
-        -Dversion=$VERSION \
-        -Dpackaging=aar \
-        -DgeneratePom=true
+      # mvn install:install-file \
+      #   -Dfile=$lib \
+      #   -DgroupId=com.company.rnsdk \
+      #   -DartifactId=$libName \
+      #   -Dversion=$VERSION \
+      #   -Dpackaging=aar \
+      #   -DgeneratePom=true
     done
