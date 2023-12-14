@@ -1,16 +1,27 @@
 jdk:
   - openjdk11
+
 install:
   - |
     cd libs
+
+    # Check if the 'libs' directory exists
+    if [ ! -d libs ]; then
+      echo "Error: 'libs' directory not found."
+      exit 1
+    fi
+
     for lib in *; do
-      libName=${lib//.aar/}
-      
-      # mvn install:install-file \
-      #   -Dfile=$lib \
-      #   -DgroupId=com.company.rnsdk \
-      #   -DartifactId=$libName \
-      #   -Dversion=$VERSION \
-      #   -Dpackaging=aar \
-      #   -DgeneratePom=true
+      if [ -f "$lib" ] && [ "${lib##*.}" = "aar" ]; then
+        libName="${lib%.aar}"  # Extracting the library name without the extension
+        
+        mvn install:install-file \
+          -Dfile="$lib" \
+          -DgroupId=com.company.rnsdk \
+          -DartifactId="$libName" \
+          -Dversion="$VERSION" \
+          -Dpackaging=aar
+      else
+        echo "Skipping non-AAR file: $lib"
+      fi
     done
