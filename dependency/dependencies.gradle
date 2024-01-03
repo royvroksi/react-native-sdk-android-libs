@@ -16,42 +16,44 @@ def playServicesLocationVersion = safeExtGet('googlePlayServicesLocationVersion'
 def locationMajorVersion = playServicesLocationVersion.split('\\.')[0] as int
 
 dependencies {
+    println "Gone here:::::"
     implementation 'com.google.firebase:firebase-core:9.6.1'
     // Declare the dependencies for the Crashlytics and Analytics libraries
     implementation 'com.google.firebase:firebase-crashlytics:17.3.1'
     implementation 'com.google.firebase:firebase-analytics:18.0.2'
     implementation 'com.facebook.soloader:soloader:0.9.0+'
     implementation 'com.facebook.infer.annotation:infer-annotation:+'
-    implementation 'gun0912.ted:tedpermission:2.2.2'
+    
+    // implementation 'gun0912.ted:tedpermission:2.2.2'
 
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation("com.facebook.react:react-native:+")
+    // implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // implementation("com.facebook.react:react-native:+")
 
-    //background location sub dependency
-    implementation 'com.google.android.gms:play-services-auth:17.0.0'
-    implementation "com.google.android.gms:play-services-location:$playServicesLocationVersion"
+    // //background location sub dependency
+    // implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    // implementation "com.google.android.gms:play-services-location:$playServicesLocationVersion"
 
-    implementation("com.huawei.hms:location:$hmsLocationVersion") {
-        exclude(group: "com.huawei.hms", module: 'hianalytics')
-    }
-    implementation 'org.slf4j:slf4j-api:1.7.36'
-    implementation 'com.github.tony19:logback-android:2.0.1'
-    implementation "org.greenrobot:eventbus:$eventBusVersion"
-    implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
-    implementation "io.github.nishkarsh:android-permissions:$androidPermissionsVersion"
-    implementation "androidx.lifecycle:lifecycle-runtime:$lifeCycleRuntimeVersion"
-    implementation "androidx.lifecycle:lifecycle-extensions:$lifeCycleExtensionsVersion"
+    // implementation("com.huawei.hms:location:$hmsLocationVersion") {
+    //     exclude(group: "com.huawei.hms", module: 'hianalytics')
+    // }
+    // implementation 'org.slf4j:slf4j-api:1.7.36'
+    // implementation 'com.github.tony19:logback-android:2.0.1'
+    // implementation "org.greenrobot:eventbus:$eventBusVersion"
+    // implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
+    // implementation "io.github.nishkarsh:android-permissions:$androidPermissionsVersion"
+    // implementation "androidx.lifecycle:lifecycle-runtime:$lifeCycleRuntimeVersion"
+    // implementation "androidx.lifecycle:lifecycle-extensions:$lifeCycleExtensionsVersion"
 
-    //react-native-camera sub dependency
-    implementation "com.google.zxing:core:3.3.3"
-    implementation 'com.google.android.play:core:1.7.2'
+    // //react-native-camera sub dependency
+    // implementation "com.google.zxing:core:3.3.3"
+    // implementation 'com.google.android.play:core:1.7.2'
 
-    //react-native-maps sub dependency
-    implementation 'com.google.maps.android:android-maps-utils:0.5'
-    implementation 'com.google.android.gms:play-services-maps:17.0.1'
+    // //react-native-maps sub dependency
+    // implementation 'com.google.maps.android:android-maps-utils:0.5'
+    // implementation 'com.google.android.gms:play-services-maps:17.0.1'
 
-    //react-native-video sub dependency
-    implementation 'com.yqritc:android-scalablevideoview:1.0.4'
+    // //react-native-video sub dependency
+    // implementation 'com.yqritc:android-scalablevideoview:1.0.4'
 
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02'
+    // implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02'
 }
